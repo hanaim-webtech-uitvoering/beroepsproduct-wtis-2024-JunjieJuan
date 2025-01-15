@@ -1,5 +1,5 @@
 <?php
-require_once 'session_example.php';
+require_once './includes/session_example.php';
 function generateHeader(){
     global $pageTitel;
     $header = <<<HEAD
