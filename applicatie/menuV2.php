@@ -1,27 +1,25 @@
 <?php
 $pageTitel = 'Menu';
 require_once 'components/header.php';
-require_once 'db_connectie.php';
 echo generateHeader();
 
-//1.Verbinding maken en gegevens ophalen
-$db = maakVerbinding();
-$query = 'select c.componistId as id, c.naam as naam, count(S.stuknr) as aantal
-          from Componist C left outer join Stuk S on C.componistId = S.componistId
-          group by C.componistId, C.naam
-          order by naam';
-$data = $db->query($query);
+require_once './includes/data_functies.php';
+require_once './includes/view_functies.php';
+// 1. Ophalen van de data
+// Haal alle niveaus op (zie data_functies.php)
+$niveaus = haalAlleNiveausOp();
 
-//2. Data renderen
-$componisten_table = '<table>';
-$componisten_table = $componisten_table . '<tr><th>Id</th><th>Naam</th><th>Aantal stukken</th></tr>';
-foreach($data as $rij) {
-  $id = $rij['id'];
-  $naam = $rij['naam'];
-  $aantal = $rij['aantal'];
-  $componisten_table = $componisten_table . "<tr><td>$id</td><td>$naam</td><td>$aantal</td></tr>";
-}
-$componisten_table = $componisten_table . "</table>";
+// 2. Renderen van de data
+// Maak de HTML-code (zie bestand view_functies.php)
+$niveausHtml = niveausNaarHtmlTable($niveaus);
+
+// 1 en 2 kan geskipt worden kan ook meteen door it 
+/*
+<body>
+  <h1>Alle niveaus</h1>
+  <?= niveausNaarHtmlTable(haalAlleNiveausOp()); ?>
+</body>
+*/
 ?>
 
 <main>
