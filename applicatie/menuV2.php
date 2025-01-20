@@ -3,23 +3,8 @@ $pageTitel = 'Menu';
 require_once 'components/header.php';
 echo generateHeader();
 
-require_once './includes/data_functies.php';
-require_once './includes/view_functies.php';
-// 1. Ophalen van de data
-// Haal alle niveaus op (zie data_functies.php)
-$niveaus = haalAlleNiveausOp();
-
-// 2. Renderen van de data
-// Maak de HTML-code (zie bestand view_functies.php)
-$niveausHtml = niveausNaarHtmlTable($niveaus);
-
-// 1 en 2 kan geskipt worden kan ook meteen door it 
-/*
-<body>
-  <h1>Alle niveaus</h1>
-  <?= niveausNaarHtmlTable(haalAlleNiveausOp()); ?>
-</body>
-*/
+require_once'./includes/menu/menu_data_functies.php';
+require_once'./includes/menu/menu_view_functies.php';
 ?>
 
 <main>

@@ -9,8 +9,8 @@ function generateFooter() {
         </div>
         <div class="footerNav">
             <ul>
-                <li><a href="algemenevoorwaarden.html">Algemene voorwaarden</a></li>
-                <li><a href="Privacyverklaring.html">privacy statement</a></li>
+                <li><a href="algemenevoorwaarden.php">Algemene voorwaarden</a></li>
+                <li><a href="Privacyverklaring.php">privacy statement</a></li>
             </ul>
         </div>
         <div class="footerBottom">

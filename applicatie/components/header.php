@@ -1,6 +1,7 @@
 <?php
 require_once './includes/session_example.php';
-function generateHeader(){
+function generateHeader()
+{
     global $pageTitel;
     $header = <<<HEAD
     <!DOCTYPE html>
@@ -19,19 +20,18 @@ function generateHeader(){
 <body>
     <header class="header">
         <div class="logo">
-            <a href="index.html" class="logo"><img class="logo" src="images/Pizzalogo.png" alt="logo"
+            <a href="index.php" class="logo"><img class="logo" src="images/Pizzalogo.png" alt="logo"
                     style="width:100px;height:80px;"></a>
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="menuV2.html">Menu</a></li>
-                <li><a href="profile.html">Profiel</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="shoppingcard.html">winkelmandje</a></li>
+                <li><a href="menuV2.php">Menu</a></li>
+                <li><a href="profile.php">Profiel</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="shoppingcard.php">winkelmandje</a></li>
             </ul>
         </nav>
     </header>
 HEAD;
     return $header;
-}
-?>
+};
