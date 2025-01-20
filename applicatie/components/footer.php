@@ -1,7 +1,3 @@
-<?php
-
-function generateFooter() {
-    $footer = <<<HEAD
 <footer class="footerContainer">
         <div class="socialIcons">
             <a href=""><i class="fa-brands fa-facebook"></i></a>
@@ -20,7 +16,3 @@ function generateFooter() {
 </body>
 
 </html>
-HEAD;
-    return $footer;
-}
-?>

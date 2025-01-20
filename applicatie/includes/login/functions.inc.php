@@ -1,27 +1,7 @@
 <?php
-function emptyInputSignup($firstName, $lastName, $username, $pwd, $pwdRepeat) {
-    $result;
-    if (empty($firstName) || empty($lastName) || empty($username) || empty($pwd) || empty($pwdRepeat)){
-        $result = true;
-    } else {
-        $result = false;
-    }
-    return $result;
-}
-
 function invalidUid($username) {
     $result;
     if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
-        $result = true;
-    } else {
-        $result = false;
-    }
-    return $result;
-}
-
-function invalidEmail($email) {
-    $result;
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $result = true;
     } else {
         $result = false;
@@ -77,4 +57,59 @@ function createUser($verbinding, $firstName, $lastName, $username, $pwd, $role =
         header("location: ../../register.php?error=stmtfailed");
         exit();
     }
+}
+
+// function loginUser($verbinding, $username, $pwd) {
+//     $uidExists = uidExists($verbinding, $username);
+
+//     if($uidExists  === false) {
+//         header("location: ../../login.php?error=wrongusername");
+//         exit();
+//     }
+
+//     $pwdHashed = $uidExists["password"];
+//     $checkPwd = password_verify($pwd, $pwdHashed);
+
+//     if($checkPwd === false) {
+//         header("location: ../../login.php?error=wrongpassword");
+//         exit();
+//     } else if ($checkPwd === true) {
+//         require_once '../session_example.php';
+//         $_SESSION["username"] =  $uidExists["username"];
+//         $_SESSION["role"] = $uidExists["role"];
+        
+//         header("location: ../../index.php?error=loggedin");
+//         exit();
+//     }
+// }
+
+
+function loginUser($verbinding, $username, $pwd) {
+    $uidExists = uidExists($verbinding, $username);
+
+    if ($uidExists === false) {
+        header("location: ../../login.php?error=wrongusername");
+        exit();
+    }
+
+    $storedPwd = $uidExists["password"];
+
+    if (password_get_info($storedPwd)['algoName'] !== "unknown") {
+        $checkPwd = password_verify($pwd, $storedPwd);
+        if ($checkPwd === false) {
+            header("location: ../../login.php?error=wrongpassword");
+            exit();
+        }
+    } else {
+        if ($pwd !== $storedPwd) {
+            header("location: ../../login.php?error=wrongpassword");
+            exit();
+        }
+    }
+
+    session_start();
+    $_SESSION["username"] = $uidExists["username"];
+    $_SESSION["role"] = $uidExists["role"];
+    header("location: ../../index.php?error=loggedin");
+    exit();
 }

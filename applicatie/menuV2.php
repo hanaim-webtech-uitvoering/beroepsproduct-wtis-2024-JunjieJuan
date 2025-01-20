@@ -1,7 +1,6 @@
 <?php
 $pageTitel = 'Menu';
 require_once 'components/header.php';
-echo generateHeader();
 
 require_once'./includes/menu/menu_data_functies.php';
 require_once'./includes/menu/menu_view_functies.php';
@@ -189,5 +188,4 @@ require_once'./includes/menu/menu_view_functies.php';
 </main>
 <?php
 require_once 'components/footer.php';
-echo generateFooter();
 ?>

@@ -1,7 +1,6 @@
 <?php
 $pageTitel = 'Algemene voorwaarden';
 require_once 'components/header.php';
-echo generateHeader();
 ?>
 
     <main>

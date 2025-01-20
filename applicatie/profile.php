@@ -1,7 +1,6 @@
 <?php
 $pageTitel = 'profiel';
 require_once 'components/header.php';
-echo generateHeader();
 ?>
 <main>
     <div class="topmargen">
@@ -162,5 +161,4 @@ echo generateHeader();
 </main>
 <?php
 require_once 'components/footer.php';
-echo generateFooter();
 ?>

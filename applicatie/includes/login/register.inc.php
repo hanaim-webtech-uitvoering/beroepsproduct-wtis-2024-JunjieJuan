@@ -9,10 +9,6 @@ if(isset($_POST["submit"])){
     require_once '../db_connectie.php';
     require_once 'functions.inc.php';
 
-    if(emptyInputSignup($firstName, $lastName, $username, $pwd, $pwdRepeat) !== false) {
-        header("location: ../../register.php?error=emptyinput");
-        exit();
-    }
     if(invalidUid($username) !== false) {
         header("location: ../../register.php?error=invaliduid");
         exit();
@@ -26,7 +22,7 @@ if(isset($_POST["submit"])){
         exit();
     }
 
-    createUser($verbinding, $firstName, $lastName, $username, $email, $pwd);
+    createUser($verbinding, $firstName, $lastName, $username, $pwd);
 
 
 } else {

@@ -1,13 +1,26 @@
 <?php
 $pageTitel = 'Registreer';
 require_once 'components/header.php';
-echo generateHeader();
 ?>
 <main>
     <div class="registerContainer">
         <div class="wrapper">
             <form action="includes/login/register.inc.php" method="post">
                 <h1>Registreren</h1>
+
+                <?php
+                    if  (isset($_GET["error"])) {
+                        if ($_GET["error"] == "invaliduid") {
+                            echo "<p>Ongeldig gebruikersnaam</p>";
+                        } else if ($_GET["error"] == "passwordsdontmatch") {
+                            echo "<p>Wachtwoord komt niet overheen</p>";
+                        } else if ($_GET["error"] == "usernametaken") {
+                            echo "<p>Gebruikersnaam is al in gebruik</p>";
+                        } else if ($_GET["error"] == "none") {
+                            echo "<p>Account aangemaakt</p>";
+                        }
+                    }
+                ?>
                 <div class="input-box">
                     <label for="first_name">Naam</label>
                     <input type="text" name="first_name" placeholder="Voornaam" required>
@@ -41,7 +54,11 @@ echo generateHeader();
         </div>
     </div>
 </main>
+
+<?php
+
+?>
+
 <?php
 require_once 'components/footer.php';
-echo generateFooter();
 ?>

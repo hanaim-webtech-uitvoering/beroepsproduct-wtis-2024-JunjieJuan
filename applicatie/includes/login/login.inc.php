@@ -1,28 +1,16 @@
 <?php
-    session_start();
-    include "./applicatie/db_connectie.php";
 
-    if(isset($_POST['username']) && isset($_POST['password'])) {
+if (isset($_POST['submit'])) {
 
-        function validate($data) {
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            return $data;
-        }
-    }
+    $username = $_POST['uid'];
+    $pwd = $_POST['password'];
 
-    $username = validate($_POST['username']);
-    $password = validate($_POST['password']);
+    require_once "../db_connectie.php";
+    require_once 'functions.inc.php';
 
-    if(empty($username)) {
-        header ("Location: index.php?error=User Name is required");
-        exit();
-    } else     if(empty($password)) {
-        header ("Location: index.php?error=Password is required");
-        exit();
-    }
+    loginUser($verbinding, $username, $pwd);
 
-    $sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
-
-    $result = mysqli_query($conn, $sql);
+} else {
+    header("location: ../../login.php?error=didnotsubmit");
+    exit();
+}

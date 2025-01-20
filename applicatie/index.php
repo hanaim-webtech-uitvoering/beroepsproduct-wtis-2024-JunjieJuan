@@ -1,7 +1,6 @@
 <?php
 $pageTitel = 'Pizzeria Sole Machina';
 require_once 'components/header.php';
-echo generateHeader();
 
 $FrontPageTexst = <<<EOD
 Een heerlijke maaltijd afhalen en thuis opeten, een avondje uit en een hapje eten bij ons in
@@ -50,5 +49,4 @@ EOD;
 
 <?php
 require_once 'components/footer.php';
-echo generateFooter();
 ?>
