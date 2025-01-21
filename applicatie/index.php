@@ -28,7 +28,7 @@ EOD;
                 <div class="zip">
                     <h1>GEBRUIK NU EEN VAN DE ACTIES!!!</h1>
                     <div class="frontpage-banner">
-                        <a href="login.html"><img class="deal" src="images/pizzaDeal.png" alt="deal"></a>
+                        <a href="login.php"><img class="deal" src="images/pizzaDeal.png" alt="deal"></a>
                     </div>
                 </div>
             </div>

@@ -31,7 +31,7 @@ global $pageTitel;
                     } else if(isset($_SESSION["role"]) && $_SESSION["role"] === "Personnel") {
                         echo '<li><a href="orderview.php">Bestellingen</a></li>';
                     } else {
-                        echo '<li><a href="shoppingcard.php">winkelmandje</a></li>'; 
+                        echo '<li><a href="shoppingcart.php">winkelmandje</a></li>'; 
                     }
 
                     if(isset($_SESSION["username"])) {

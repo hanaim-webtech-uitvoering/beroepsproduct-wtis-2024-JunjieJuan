@@ -12,3 +12,4 @@ function testfunctie(){
 
     return $data;
 }
+?>

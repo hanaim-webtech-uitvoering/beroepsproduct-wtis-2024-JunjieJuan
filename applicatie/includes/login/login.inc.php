@@ -14,3 +14,4 @@ if (isset($_POST['submit'])) {
     header("location: ../../login.php?error=didnotsubmit");
     exit();
 }
+?>
