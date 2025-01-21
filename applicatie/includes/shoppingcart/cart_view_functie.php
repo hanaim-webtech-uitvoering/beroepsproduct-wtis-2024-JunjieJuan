@@ -22,9 +22,13 @@ function generateShoppingCarthtml()
             echo '<tr>';
             echo '<td>' . htmlspecialchars($item['name']) . '</td>';
             echo '<td>€ ' . number_format($item['price'], 2) . '</td>';
-            echo '<td><form action="includes/shoppingcart/update_cart.php"><input type="number" name="quantity" value="' . $item['quantity'] . '"min="0">';
-            echo '<button type="submit">Update</button>';
-            echo '</form></td>';
+            echo '<td>
+            <form method="post" action="includes/shoppingcart/update_cart.php">
+                <input type="hidden" name="name" value="' . htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8') . '">
+                <input type="number" name="quantity" value="' . $item['quantity'] . '" min="0">
+                <button type="submit">Update</button>
+            </form>
+            </td>';
             echo '<td>€ ' . number_format($itemTotal, 2) . '</td>';
             echo '</tr>';
             echo '<tbody>';

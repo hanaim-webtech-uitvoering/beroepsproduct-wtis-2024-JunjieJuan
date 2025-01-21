@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_POST['add_to_cart'])){
+if (isset($_POST['add_to_cart'])) {
 
     $product_name = $_POST['product_name'];
     $product_name = filter_var($product_name, FILTER_SANITIZE_STRING);
@@ -15,7 +15,7 @@ if(isset($_POST['add_to_cart'])){
 
     //controlleren of het al in de cart is
     $found = false;
-    foreach ($_SESSION['cart'] as & $item) {
+    foreach ($_SESSION['cart'] as &$item) {
         if ($item['name'] === $product_name) {
             // If found, update the quantity
             $item['quantity'] += $quantity;
@@ -36,5 +36,3 @@ if(isset($_POST['add_to_cart'])){
 
 header("location: /../../menuV2.php?error=productadded");
 exit();
-
-?>
