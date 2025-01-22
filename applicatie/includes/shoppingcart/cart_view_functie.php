@@ -1,11 +1,6 @@
 <?php
 function generateShoppingCarthtml()
 {
-    echo '<main>';
-    echo '<div class="topmargen">';
-    echo '<div class="orderContainer">';
-    echo '<div class="order-list">';
-    echo '<h1>Bestelling</h1>';
 
     if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
         echo '<p>Your cart is empty.</p>';
@@ -41,27 +36,4 @@ function generateShoppingCarthtml()
         echo '</form>';
         echo '</div>';
     }
-    echo '<div class="confirm-order">';
-    echo '<div class="confirm-adres">';
-    echo '<h3>Vul adres in</h3>';
-    echo '<form action="#">';
-    echo '<label for="adres">Straatnaam</label>';
-    echo '<input type="text" id="street" name="address" placeholder="hanstraat  123" required>';
-
-    echo '<label for="city">Stad</label>';
-    echo '<input type="text" id="city" name="city" placeholder="Arnhem" required>';
-
-    echo '<label for="postal">Postcode</label>';
-    echo '<input type="text" id="postal" name="postal" placeholder="1234AB" required>';
-
-    echo '<label for="phone">Telefoonnummer</label>';
-    echo '<input type="tel" id="phone" placeholder="06-1234567" pattern="[0-9]{2}-[0-9]{7}" required>';
-    echo '</form>';
-    echo '</div>';
-    echo '<button class="checkout-btn" onclick="checkout()">Checkout</button>';
-    echo '</div>';
-
-    echo '</div>';
-    echo '</div>';
-    echo '</main>';
 }

@@ -5,7 +5,7 @@ require_once 'components/header.php';
 <main>
     <div class="registerContainer">
         <div class="wrapper">
-            <form action="includes/login/register.inc.php" method="post">
+            <form method="post" action="includes/login/register.inc.php">
                 <h1>Registreren</h1>
 
                 <?php
@@ -22,7 +22,7 @@ require_once 'components/header.php';
                     }
                 ?>
                 <div class="input-box">
-                    <label for="first_name">Naam</label>
+                    <label for="name">Naam</label>
                     <input type="text" name="first_name" placeholder="Voornaam" required>
                 </div>
 
