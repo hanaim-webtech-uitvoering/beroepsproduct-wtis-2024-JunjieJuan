@@ -26,7 +26,7 @@ global $pageTitel;
                 <li><a href="menuV2.php">Menu</a></li>
                 <?php 
                     if (isset($_SESSION["role"]) && $_SESSION["role"] === "Client") {
-                        echo '<li><a href="shoppingcard.php">winkelmandje</a></li>'; 
+                        echo '<li><a href="shoppingcart.php">winkelmandje</a></li>'; 
                         echo '<li><a href="profile.php">Profiel</a></li>';
                     } else if(isset($_SESSION["role"]) && $_SESSION["role"] === "Personnel") {
                         echo '<li><a href="orderview.php">Bestellingen</a></li>';
