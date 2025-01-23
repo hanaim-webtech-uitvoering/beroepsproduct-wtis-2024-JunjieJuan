@@ -13,7 +13,6 @@ require_once 'includes/orderview/view_orderview.php';
             </div>
             <?= generateOrderView(getOrderView()) ?>
         </div>
-
     </div>
 </main>
 

@@ -6,11 +6,11 @@ function generateOrderView($data)
     $html = $html . '<tr><th>Order Nr.</th><th>Time</th><th>Adres</th><th>Status</th><th>Extra info</th></tr>';
 
     // Elke rij als een "table row"
-    foreach ($data as $rij) {
-        $order_id = $rij['order_id'];
-        $time = $rij['time'];
-        $status = $rij['status'];
-        $address = $rij['address'];
+    foreach ($data as $row) {
+        $order_id = $row['order_id'];
+        $time = $row['time'];
+        $status = $row['status'];
+        $address = $row['address'];
         $html = $html . "<tr><td>$order_id</td><td>$time</td><td>$address</td>";
         $html = $html . '<td>
             <form method="post" action="includes/orderview/update_status.php" class="status-form">
@@ -25,7 +25,7 @@ function generateOrderView($data)
             </form>
           </td>';
         $html = $html . '<td><div class="order-detail-link">
-                            <a href="orderdetails.php">Info</a>
+                            <a href="orderdetails.php?order_id=' . $order_id . '">Info</a>
                         </div></td></tr>';
     }
     // Eind van de "table"

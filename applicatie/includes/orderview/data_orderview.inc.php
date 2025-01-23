@@ -5,7 +5,7 @@ function getOrderView() {
     $db = maakVerbinding();
 
     $sql = "SELECT order_id, FORMAT(datetime, 'HH:mm') AS time, status, address 
-            FROM Pizza_Order";
+            FROM [Pizza_Order]";
 
     $data = $db->prepare($sql);
     $data->execute();

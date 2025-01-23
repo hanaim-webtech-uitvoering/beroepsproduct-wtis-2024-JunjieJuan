@@ -4,11 +4,11 @@ if(isset($_POST["submit"])){
     $first_name = trim($_POST['first_name']);
     $last_name = trim($_POST['last_name']);
     $street = trim($_POST['street']);
+    $houseNumber = trim($_POST['number']);
+    $postalCode = trim($_POST['postal']);
     $city = trim($_POST['city']);
-    $postal = trim($_POST['postal']);
-
     $name = $first_name . " " . $last_name;
-    $address = $street. " " . $postal . " " . $city;
+    $complete_address = $street . ' ' . $houseNumber . ' ' . $postalCode . ' ' . $city;
 
     require_once '../db_connectie.php';
     require_once 'process_order_funtions.inc.php';
@@ -18,7 +18,7 @@ if(isset($_POST["submit"])){
         exit();
     }
 
-    createOrder($verbinding, $name, $address);
+    createOrder($verbinding, $name, $complete_address);
 
 } else {
     header("location: ../../shoppingcart.php");
