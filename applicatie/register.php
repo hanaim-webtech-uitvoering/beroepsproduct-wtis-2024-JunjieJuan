@@ -31,7 +31,7 @@ require_once 'components/header.php';
                 </div>
 
                 <div class="input-box">
-                    <label for="first_name">Gebruikersnaam</label>
+                    <label for="username">Gebruikersnaam</label>
                     <input type="text" name="uid" placeholder="gebruikersnaam" required>
                 </div>
 
@@ -54,11 +54,6 @@ require_once 'components/header.php';
         </div>
     </div>
 </main>
-
-<?php
-
-?>
-
 <?php
 require_once 'components/footer.php';
 ?>

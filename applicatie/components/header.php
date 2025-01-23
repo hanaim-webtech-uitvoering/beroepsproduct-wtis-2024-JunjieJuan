@@ -24,14 +24,12 @@ global $pageTitel;
         <nav class="navbar">
             <ul>
                 <li><a href="menuV2.php">Menu</a></li>
+                <li><a href="shoppingcart.php">winkelmandje</a></li>
                 <?php 
                     if (isset($_SESSION["role"]) && $_SESSION["role"] === "Client") {
-                        echo '<li><a href="shoppingcart.php">winkelmandje</a></li>'; 
                         echo '<li><a href="profile.php">Profiel</a></li>';
                     } else if(isset($_SESSION["role"]) && $_SESSION["role"] === "Personnel") {
                         echo '<li><a href="orderview.php">Bestellingen</a></li>';
-                    } else {
-                        echo '<li><a href="shoppingcart.php">winkelmandje</a></li>'; 
                     }
 
                     if(isset($_SESSION["username"])) {

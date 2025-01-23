@@ -681,6 +681,12 @@ video {
     font-size: 14px;
 }
 
+.status-form {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Afstand tussen elementen */
+}
+
 
 /*order detail*/
 .order-detail-container {
