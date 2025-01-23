@@ -3,8 +3,8 @@ function processUserData($data)
 {
     $processedData = [
         'username' => $data[0]['username'] ?? 'Onbekend',
-        'first_name' => $data[0]['first_name'] ?? 'Onbekend',
-        'last_name' => $data[0]['last_name'] ?? 'Onbekend',
+        'first_name' => $data[0]['first_name'] ?? '',
+        'last_name' => $data[0]['last_name'] ?? '',
         'streetName' => null,
         'houseNumber' => null,
         'postalCode' => null,
