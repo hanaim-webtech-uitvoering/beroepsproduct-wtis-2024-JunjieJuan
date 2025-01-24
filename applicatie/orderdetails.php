@@ -10,16 +10,13 @@ require_once 'includes/orderview/orderdetails/view_orderdetails.php';
         <?php
         // Controleer of er een order_id in de URL zit
         if (isset($_GET['order_id'])) {
-            $order_id = $_GET['order_id'];  // Haal de order_id uit de URL
+            $order_id = $_GET['order_id'];
 
             try {
-                // Verkrijg de orderdetails van de database op basis van de order_id
                 $orderDetails = getOrderDetails($order_id);
 
-                // Genereer en toon de HTML van de orderdetails
                 echo generateOrderDetails($orderDetails);
             } catch (Exception $e) {
-                // Foutmelding als er geen orderdetails kunnen worden opgehaald
                 echo '<p>Error: ' . $e->getMessage() . '</p>';
             }
         } else {

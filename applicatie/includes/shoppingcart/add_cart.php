@@ -17,14 +17,14 @@ if (isset($_POST['add_to_cart'])) {
     $found = false;
     foreach ($_SESSION['cart'] as &$item) {
         if ($item['name'] === $product_name) {
-            // If found, update the quantity
+            // aantal verhogen
             $item['quantity'] += $quantity;
             $found = true;
             break;
         }
     }
 
-    //product toevoegen aan de cart
+    //product toevoegen
     if (!$found) {
         $_SESSION['cart'][] = [
             'name' => $product_name,

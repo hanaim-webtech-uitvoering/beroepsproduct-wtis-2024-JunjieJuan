@@ -1,6 +1,6 @@
 <footer class="footerContainer">
         <div class="socialIcons">
-            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.youtube.com/watch?v=feoCpaaRkb4&ab_channel=Loopeyfluff"><i class="fa-brands fa-facebook"></i></a>
             <a href=""><i class="fa-brands fa-instagram"></i></a>
         </div>
         <div class="footerNav">

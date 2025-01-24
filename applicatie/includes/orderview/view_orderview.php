@@ -5,7 +5,6 @@ function generateOrderView($data)
 
     $html = $html . '<tr><th>Order Nr.</th><th>Time</th><th>Adres</th><th>Status</th><th>Extra info</th></tr>';
 
-    // Elke rij als een "table row"
     foreach ($data as $row) {
         $order_id = $row['order_id'];
         $time = $row['time'];
@@ -28,9 +27,6 @@ function generateOrderView($data)
                             <a href="orderdetails.php?order_id=' . $order_id . '">Info</a>
                         </div></td></tr>';
     }
-    // Eind van de "table"
     $html = $html . "</tbody></table>";
-
-    // Geef de HTML terug
     return $html;
 }

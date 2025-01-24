@@ -33,10 +33,9 @@ function createOrder($verbinding, $name, $address, $status = "1")
         $stmt = $verbinding->prepare($sqlPlaceOrder);
         $stmt->execute([$clientUsername, $name, $personnelUsername, $orderDatetime, $status, $address]);
 
-        // Het laatst ingevoegde order_id ophalen
+        // laatst ingevoegde order_id ophalen
         $orderId = $verbinding->lastInsertId();
 
-        // Order_items opslaan
         foreach ($_SESSION['cart'] as $item) {
             $sqlPlaceItem = "INSERT INTO Pizza_Order_Product (order_id, product_name, quantity)
                 VALUES (?, ?, ?)";

@@ -4,7 +4,6 @@ require_once 'components/header.php';
 require_once 'includes/account/data_userinfo.php';
 require_once 'includes/account/proces_data_userinfo.php';
 
-// Gegevens van de ingelogde gebruiker verwerken
 $processedData = processUserData(getUserInfo());
 ?>
 <main>

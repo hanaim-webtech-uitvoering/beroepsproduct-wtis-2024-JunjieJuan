@@ -107,7 +107,12 @@ function loginUser($verbinding, $username, $pwd) {
         }
     }
 
-    require_once '../session_example.php';
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    session_regenerate_id(true);
+    
     $_SESSION["username"] = $uidExists["username"];
     $_SESSION["role"] = $uidExists["role"];
     header("location: ../../index.php?error=loggedin");

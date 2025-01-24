@@ -9,9 +9,7 @@ if (isset($_POST['submit'])) {
     require_once 'functions.inc.php';
 
     loginUser($verbinding, $username, $pwd);
-
 } else {
     header("location: ../../login.php?error=didnotsubmit");
     exit();
 }
-?>

@@ -2,6 +2,11 @@
 $pageTitel = 'Order view';
 require_once 'components/header.php';
 
+if ($_SESSION["role"] !== "Personnel") {
+    header("location: index.php?error=accessdenied");
+    exit();
+}
+
 require_once 'includes/orderview/data_orderview.inc.php';
 require_once 'includes/orderview/view_orderview.php';
 ?>
